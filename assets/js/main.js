@@ -5,7 +5,7 @@ function getCookies(){
 function p(stuff){
     console.log(stuff);
 }
-function buildSummonerList(){
+function getPreviousSummoners(){
     var cookies = getCookies(); //get all cookies from page
     for(var i=0; i<cookies.length; i++) {
         var c = cookies[i];
@@ -16,13 +16,26 @@ function buildSummonerList(){
             return s; //return array of summoners
         }
     }
+    console.log("No previous summoners found..");
 }
- 
 function buildSummonerList(){
-    var summoners = getPreviousSummoners; //get summoners cookie data
-    for (var j=0;j < summoners.length; j++){
-        p(summoners[j]);
-    }
+    var summoners = getPreviousSummoners(); //get summoners cookie data
+    if (summoners){
+        for (var i=0;i < summoners.length; i++){
+            sname = summoners[i];
+            sid = 5;
+            $(".summoner-list").append("<a href=dashboard?sid=" + sid + "><li>" + sname.toUpperCase() + "</li></a>");
+        }
+        return 0;
+    } else
+        return 1;
 }
 
-buildSummonerList();
+$(document).ready(function(){   //ensure document is ready
+    ps = buildSummonerList();
+    if(ps === 0)
+        $("#select-message").append("Select a previous summoner or enter a new summoner name");//previous summoners (ps) == true
+    else
+        $("#select-message").append("Enter a summoner ID in the box below!");//previous summoners (ps) == false
+
+});
