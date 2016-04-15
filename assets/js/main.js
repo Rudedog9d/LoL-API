@@ -35,7 +35,8 @@ $(document).ready(function(){   //ensure document is ready
     ps = buildSummonerList();
     if(ps === 0)
         $("#select-message").append("Select a previous summoner or enter a new summoner name");//previous summoners (ps) == true
-    else
+    else{
         $("#select-message").append("Enter a summoner ID in the box below!");//previous summoners (ps) == false
-
+        $(".summoner-list").hide();
+    }
 });

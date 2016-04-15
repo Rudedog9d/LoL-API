@@ -185,8 +185,11 @@ body {
         .summoner-list a {
             text-decoration: none;
             color: #FFFFFF;
-
         }
+.summoner-input {
+    //background-color: #3CBC8D;
+    color: gray;
+}
 .nav-top {
     display: inline;
     position: fixed;
