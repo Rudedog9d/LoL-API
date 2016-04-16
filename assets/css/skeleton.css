@@ -152,12 +152,13 @@ body {
     color: white;
     position: absolute;
     z-index: 11;
+    border-radius: 6px;
 }
 .list-container {
     text-align: center;
 }
 .summoner-list {
-    list-style: none; /* Lets remove default bullets for all elements */
+    list-style: none; /* remove bullets */
     text-align: center;
     display: inline-block;
     background: #000000;
@@ -187,8 +188,10 @@ body {
             color: #FFFFFF;
         }
 .summoner-input {
-    //background-color: #3CBC8D;
-    color: gray;
+    color: black;
+    font: bold;
+    -webkit-transition: width 1s ease-in-out;
+    transition: width 1s ease-in-out;
 }
 .nav-top {
     display: inline;
